@@ -1,0 +1,35 @@
+.footer-section{
+  position: relative;
+  padding: 80px 0;
+  z-index: 1;
+  &::before{
+    position: absolute;
+    content: '';
+    height: 40%;
+    width: 65%;
+    bottom: 0;
+    left: 0;
+    background: #292c37;
+    z-index: -1;
+  }
+  &::after{
+    position: absolute;
+    content: '';
+    height: 55%;
+    width: 65%;
+    bottom: 0;
+    right: 0;
+    background: #19dfd8;
+    z-index: -2;
+  }
+  .nat-footrt-text{
+    h1{
+      font-size: 250px;
+      font-family: $oswald;
+      color: #434754;
+      letter-spacing: 30px;
+      margin: 0;
+      opacity: .20;
+    }
+  }
+}

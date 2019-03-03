@@ -1,0 +1,25 @@
+.navigation-section{
+  background-image: url('../../images/home-image/background.jpg');
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  .nat-logo {
+    background: #292c37;
+    display: inline-block;
+    padding: 3% 10% 3% 3%;
+  }
+  .nat-menu-button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: $white;
+    height: 100%;
+    width: 240px;
+    svg {
+      position: absolute;
+      top: 50%;
+      right: 45%;
+      transform: translateY(-50%);
+    }
+  }
+}

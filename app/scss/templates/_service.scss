@@ -1,0 +1,110 @@
+.service-section{
+  text-align: center;
+  padding: 100px 0;
+  h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: $oswald;
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 50px;
+    span{
+      font-weight: 100;
+    }
+  }
+  p{
+    font-family: $secondary-font;
+    font-size: 15px;
+    color: #949494;
+    margin: 50px 0 100px 0;
+  }
+  .nat-service{
+    width: 80%;
+    margin: 0 auto;
+    max-height: 230px;
+    padding: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    &::before{
+      position: absolute;
+      content: '';
+      background: url(../images/service/pattern.png);
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-repeat: repeat;
+      z-index: -2;
+      transform: translate(0 , 0);
+      transition: all .3s ease;
+      pointer-events: none;
+      opacity: 0;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      background: rgba(255, 255, 255, .70);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .3s ease;
+    }
+    // .service-icon{}
+    .service-text{
+      p{
+        margin: 30px 0 0 0;
+        font-family: $secondary-font;
+        font-size: 15px;
+        color: #949494;
+        line-height: 26px;
+      }
+    }
+    &:hover{
+      &::before{
+        transform: translate(25px,25px);
+        opacity: 1;
+      }
+      &::after{
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 42px 89px 0px rgba(86, 96, 100, 0.11);
+      }
+    }
+  }
+  .nat-service-action {
+    display: inline-block;
+    margin: auto;
+    margin-top: 100px;
+    padding: 20px 40px;
+    background: #292c37;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: $oswald;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid transparent;
+    position: relative;
+    z-index: 1;
+    &::before{
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 0;
+      top: 0;
+      left: 0;
+      background: #f5f6f7;
+      transition: all .3s ease;
+      z-index: -1;
+    }
+    &:hover{
+      // border: 1px solid #292c37;
+      color: #292c37;
+      // background: transparent;
+      &::before{
+        width: 100%;
+      }
+    }
+  }
+}

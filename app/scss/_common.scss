@@ -19,3 +19,19 @@ body {
   }
 }
 
+.dividers{
+  display: flex;
+  width: 1110px;
+  position: fixed;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  .divider{
+    border-right: 1px solid #e3e5e7;
+    flex-basis: 20%;
+    height: 100vh;
+    &:first-child{
+      border-left: 1px solid #e3e5e7;
+    }
+  }
+}

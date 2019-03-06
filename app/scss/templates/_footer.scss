@@ -1,4 +1,4 @@
-.footer-section{
+.nat__footer{
   position: relative;
   padding: 80px 0;
   z-index: 1;
@@ -22,10 +22,9 @@
     background: #19dfd8;
     z-index: -2;
   }
-  .nat-footrt-text{
+  &-text{
     h1{
       font-size: 250px;
-      font-family: $oswald;
       color: #434754;
       letter-spacing: 30px;
       margin: 0;

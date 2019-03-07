@@ -1,4 +1,4 @@
-.nat__footer{
+.footer{
   position: relative;
   padding: 80px 0;
   z-index: 1;
@@ -22,7 +22,7 @@
     background: #19dfd8;
     z-index: -2;
   }
-  &-text{
+  &__text{
     h1{
       font-size: 250px;
       color: #434754;

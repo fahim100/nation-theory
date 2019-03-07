@@ -1,6 +1,6 @@
 $(document).ready(function () {
     'use strict';
-    $('#nat__case__slider-left').slick({
+    $('#case__slider-left').slick({
         slideToShow: 1,
         dots: true,
         arrows: false,
@@ -11,7 +11,7 @@ $(document).ready(function () {
             return '<a class="pager__item"> '+title+' </a>';
         },
     });
-    $('#nat__case__slider-right').slick({
+    $('#case__slider-right').slick({
         slideToShow: 1,
         dots: true,
         arrows: false,

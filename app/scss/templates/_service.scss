@@ -1,107 +1,105 @@
-.nat{
-  &__service{
-    text-align: center;
-    padding: 100px 0;
-    h3{
-      font-size: 30px;
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 5px;
-      line-height: 50px;
-      span{
-        font-weight: 100;
-        font-family: $secondary-font;
+.service{
+  text-align: center;
+  padding: 100px 0;
+  h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 50px;
+    span{
+      font-weight: 100;
+      font-family: $secondary-font;
+    }
+  }
+  p{
+    font-size: 15px;
+    color: #949494;
+    margin: 50px 0 100px 0;
+    font-family: $opensans;
+  }
+  &__item{
+    width: 100%;
+    margin: 20px auto;
+    height: 230px;
+    padding: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    &::before{
+      position: absolute;
+      content: '';
+      background: url(../images/service/pattern.png);
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-repeat: repeat;
+      z-index: -2;
+      transform: translate(0 , 0);
+      transition: all .3s ease;
+      pointer-events: none;
+      opacity: 0;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      background: rgba(255, 255, 255, .70);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .3s ease;
+    }
+    // .service-icon{}
+    .text{
+      p{
+        margin: 30px 0 0 0;
+        font-size: 15px;
+        color: #949494;
+        line-height: 26px;
       }
     }
-    p{
-      font-size: 15px;
-      color: #949494;
-      margin: 50px 0 100px 0;
-      font-family: $opensans;
-    }
-    &-item{
-      width: 100%;
-      margin: 20px auto;
-      height: 230px;
-      padding: 30px;
-      cursor: pointer;
-      position: relative;
-      z-index: 1;
+    &:hover{
       &::before{
-        position: absolute;
-        content: '';
-        background: url(../images/service/pattern.png);
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-repeat: repeat;
-        z-index: -2;
-        transform: translate(0 , 0);
-        transition: all .3s ease;
-        pointer-events: none;
-        opacity: 0;
+        transform: translate(25px,25px);
+        opacity: 1;
       }
       &::after{
-        position: absolute;
-        content: '';
-        background: rgba(255, 255, 255, .70);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: all .3s ease;
-      }
-      // .service-icon{}
-      .text{
-        p{
-          margin: 30px 0 0 0;
-          font-size: 15px;
-          color: #949494;
-          line-height: 26px;
-        }
-      }
-      &:hover{
-        &::before{
-          transform: translate(25px,25px);
-          opacity: 1;
-        }
-        &::after{
-          background: rgba(255, 255, 255, 1);
-          box-shadow: 0px 42px 89px 0px rgba(86, 96, 100, 0.11);
-        }
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px 42px 89px 0px rgba(86, 96, 100, 0.11);
       }
     }
-    .action {
-      display: inline-block;
-      margin: auto;
-      padding: 20px 40px;
-      background: #292c37;
-      color: #ffffff;
-      text-transform: uppercase;
-      font-weight: 400;
-      letter-spacing: 2px;
-      text-decoration: none;
-      border: 1px solid transparent;
-      position: relative;
-      z-index: 1;
+  }
+  .action {
+    display: inline-block;
+    margin: auto;
+    padding: 20px 40px;
+    background: #292c37;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    position: relative;
+    z-index: 1;
+    &::before{
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 0;
+      top: 0;
+      left: 0;
+      background: #f5f6f7;
+      transition: all .3s ease;
+      z-index: -1;
+    }
+    &:hover{
+      color: #292c37;
       &::before{
-        position: absolute;
-        content: '';
-        height: 100%;
-        width: 0;
-        top: 0;
-        left: 0;
-        background: #f5f6f7;
-        transition: all .3s ease;
-        z-index: -1;
-      }
-      &:hover{
-        color: #292c37;
-        &::before{
-          width: 100%;
-        }
+        width: 100%;
       }
     }
   }

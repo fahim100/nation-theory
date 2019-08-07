@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    'use strict';
     $('#case__slider-left').slick({
         slideToShow: 1,
         dots: true,
@@ -20,6 +19,42 @@ $(document).ready(function () {
         customPaging : function(slider, i) {
             var title = $(slider.$slides[i]).data('title');
             return '<a class="pager__item"> '+title+' </a>';
-        },
+        }
     });
+
+    // var controller = new ScrollMagic.Controller();
+    
+    var tl = new TimelineMax();
+    tl
+        .fromTo("#case__slider-right .case__slider-item .thumbnail .overlay", 2,{skewX: 30, scale: 3 },{skewX:0, delay:1, transformOrigin: "0% 100%",
+        xPercent: 100, ease: Power3.easeOut})
+        // .from("case__slider .right", 1, {x: 200, autoAlpha: "1"},'-=1')
+
+    var controller = new ScrollMagic.Controller();
+
+    var scene = new ScrollMagic.Scene({
+        triggerElement: "#case__slider-right",
+        // duration: "100%",
+        triggerHook: 0.9
+    })
+
+    .setTween(tl)
+    .addTo(controller)
+    .addIndicators();
+
+    var tl2 = new TimelineMax();
+    tl2
+        .fromTo("#case__slider-left .case__slider-item .thumbnail .overlay", 2,{skewX: 30, scale: 3 },{skewX:0, delay:1, 
+            transformOrigin: "0% 100%",xPercent: 100, ease: Power3.easeOut})
+
+    var scene2 = new ScrollMagic.Scene({
+        triggerElement: "#case__slider-left",
+        // duration: "100%",
+        triggerHook: 0.9
+    })
+
+    .setTween(tl2)
+    .addTo(controller)
+    .addIndicators();
+
 });

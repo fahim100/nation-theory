@@ -26,26 +26,21 @@ $(document).ready(function () {
             return '<a class="pager__item"> '+title+' </a>';
         }
     });
-
-    // var controller = new ScrollMagic.Controller();
     
     var tl = new TimelineMax();
     tl
         .fromTo("#case__slider-right .case__slider-item .thumbnail .overlay", 2,{skewX: 30, scale: 3 },{skewX:0, delay:1, transformOrigin: "0% 100%",
         xPercent: 100, ease: Power3.easeOut})
-        // .from("case__slider .right", 1, {x: 200, autoAlpha: "1"},'-=1')
 
     var controller = new ScrollMagic.Controller();
 
     var scene = new ScrollMagic.Scene({
         triggerElement: "#case__slider-right",
-        // duration: "100%",
         triggerHook: 0.9
     })
 
     .setTween(tl)
-    .addTo(controller)
-    .addIndicators();
+    .addTo(controller);
 
     var tl2 = new TimelineMax();
     tl2
@@ -54,33 +49,50 @@ $(document).ready(function () {
 
     var scene2 = new ScrollMagic.Scene({
         triggerElement: "#case__slider-left",
-        // duration: "100%",
         triggerHook: 0.9
     })
 
     .setTween(tl2)
-    .addTo(controller)
-    .addIndicators();
+    .addTo(controller);
 
-    // $('.navigation__menu').click(function(){
-    //     $('.navigation__item').addClass('activeClass');
-    // });
-    // $('.close_button').click(function(){
-    //     $('.navigation__item').removeClass('activeClass');
-    // });
+    var tl3 = new TimelineMax();
+    tl3
+        .fromTo(".client__logo", 1, {autoAlpha: 0, x: 100}, {autoAlpha: 1, x: 0})
+
+    var scene3 = new ScrollMagic.Scene({
+        triggerElement: ".client__logo",
+        triggerHook: 0.7
+    })
+
+    .setTween(tl4)
+    .addTo(controller);
+
+    var tl4 = new TimelineMax(),
+        item = document.querySelectorAll(".service__item");
+    item.forEach(function(e, index){
+        tl4.from(e, .3, {autoAlpha: 0, y: 20}, "-=.03")
+    });
+
+    var scene4 = new ScrollMagic.Scene({
+        triggerElement: ".service__item",
+        triggerHook: 0.7
+    })
+
+    .setTween(tl4)
+    .addTo(controller);
 
     var nav_menu_open = new TimelineMax();
 
     nav_menu_open
         .to(".navigation__item", .5, {
-            opacity: 1,
+            autoAlpha: 1,
             zIndex: 1111,
             ease: Power0.easeNone,
         });
     nav_menu_open
         .staggerFromTo(".navigation_background_diveders .navigation_diveder", .1, {
             autoAlpha: 0,
-            y: -500,
+            y: -300,
         }, {
             autoAlpha: 1,
             y: 0,
@@ -103,8 +115,32 @@ $(document).ready(function () {
         nav_menu_open.play();
     });
 
+    //  var nav_menu_close = new TimelineMax();
+
+    //  nav_menu_close
+    //     .fromTo('.close_button::before', .5, {
+    //         transform: rotation(45),
+    //     },{
+    //         transform: rotation(0),
+    //     });
+
     $('.close_button').on('click', function(){
         nav_menu_open.reverse();
     });
+
+    // tilt AnimationEffect
+
+    // $('.thumb').tilt({
+    //     scale: 1.4,
+    // });
+
+    var pattern_move = new TimelineMax();
+
+    pattern_move
+        .from(".pattern-1", .3, {
+            x: -100
+        });
+
+    pattern_move.repeat();
 
 });
